@@ -67,6 +67,7 @@ closeButton.MouseButton1Click:Connect(function()
     ui:Destroy()
 end)
 
--- Ajustar o alinhamento
-minimizeButton.Position = UDim2.new(0, 0, 0.5, -10)
-closeButton.Position = UDim2.new(0, 30, 0.5, -10)
+-- Movendo o texto do botão "X"
+closeButton.TextLabel.Position = UDim2.new(0.5, 0, 0.5, 0) -- Ajuste aqui a posição do texto
+minimizeButton.TextLabel.Position = UDim2.new(0.5, 0, 0.5, 0) -- Ajuste também o botão "-"
+
