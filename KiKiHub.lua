@@ -38,15 +38,15 @@ end)
 local buttonsFrame = Instance.new("Frame")
 buttonsFrame.Parent = frame
 buttonsFrame.BackgroundTransparency = 1
-buttonsFrame.Size = UDim2.new(0, 60, 0, 20)
-buttonsFrame.Position = UDim2.new(1, -60, 0, 0)
+buttonsFrame.Size = UDim2.new(0, 50, 0, 20)
+buttonsFrame.Position = UDim2.new(1, -50, 0, 0)
 
 local minimizeButton = Instance.new("TextButton")
 minimizeButton.Parent = buttonsFrame
 minimizeButton.Size = UDim2.new(0, 20, 0, 20)
 minimizeButton.Position = UDim2.new(0, 0, 0, 0)
 minimizeButton.BackgroundTransparency = 1
-minimizeButton.Text = "_"
+minimizeButton.Text = "-"
 minimizeButton.TextColor3 = Color3.fromRGB(255, 0, 0)
 minimizeButton.TextSize = 14
 minimizeButton.MouseButton1Click:Connect(function()
@@ -65,6 +65,5 @@ closeButton.MouseButton1Click:Connect(function()
     ui:Destroy()
 end)
 
--- Ajustar a posição para alinhar o texto "-" e "X"
 minimizeButton.Position = UDim2.new(0, 0, 0, 0)
-closeButton.Position = UDim2.new(0, 25, 0, 0)
+closeButton.Position = UDim2.new(0, 20, 0, 0)
