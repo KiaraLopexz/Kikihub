@@ -69,15 +69,7 @@ UIS.InputBegan:Connect(function(input, gameProcessedEvent)
     if gameProcessedEvent then return end
     if input.UserInputType == Enum.UserInputType.Keyboard then
         if input.KeyCode == Enum.KeyCode.LeftControl then
-            frame.Visible = false
-        end
-    end
-end)
-
-UIS.InputEnded:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.Keyboard then
-        if input.KeyCode == Enum.KeyCode.LeftControl then
-            frame.Visible = true
+            frame.Visible = not frame.Visible
         end
     end
 end)
