@@ -65,18 +65,18 @@ closeButton.MouseButton1Click:Connect(function()
     ui:Destroy()
 end)
 
--- Função para minimizar com Ctrl + M
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
     if gameProcessedEvent then return end
-    
     if input.UserInputType == Enum.UserInputType.Keyboard then
-        -- Minimizar com Ctrl + M
-        if input.KeyCode == Enum.KeyCode.M and UIS:IsKeyDown(Enum.KeyCode.LeftControl) then
+        if input.KeyCode == Enum.KeyCode.LeftControl then
             frame.Visible = false
         end
+    end
+end)
 
-        -- Restaurar com Ctrl + Shift + M
-        if input.KeyCode == Enum.KeyCode.M and UIS:IsKeyDown(Enum.KeyCode.LeftControl) and UIS:IsKeyDown(Enum.KeyCode.LeftShift) then
+UIS.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Keyboard then
+        if input.KeyCode == Enum.KeyCode.LeftControl then
             frame.Visible = true
         end
     end
