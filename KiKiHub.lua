@@ -44,7 +44,7 @@ buttonsFrame.Position = UDim2.new(1, -60, 0, 0)
 local minimizeButton = Instance.new("TextButton")
 minimizeButton.Parent = buttonsFrame
 minimizeButton.Size = UDim2.new(0, 20, 0, 20)
-minimizeButton.Position = UDim2.new(0, 0, 0, 0)
+minimizeButton.Position = UDim2.new(0, 0, 0.5, -10)
 minimizeButton.BackgroundTransparency = 1
 minimizeButton.Text = "_"
 minimizeButton.TextColor3 = Color3.fromRGB(255, 0, 0)
@@ -56,7 +56,7 @@ end)
 local closeButton = Instance.new("TextButton")
 closeButton.Parent = buttonsFrame
 closeButton.Size = UDim2.new(0, 20, 0, 20)
-closeButton.Position = UDim2.new(0, 30, 0, 0)
+closeButton.Position = UDim2.new(0, 30, 0.5, -10)
 closeButton.BackgroundTransparency = 1
 closeButton.Text = "X"
 closeButton.TextColor3 = Color3.fromRGB(255, 0, 0)
@@ -64,7 +64,3 @@ closeButton.TextSize = 14
 closeButton.MouseButton1Click:Connect(function()
     ui:Destroy()
 end)
-
--- Agora, ajustei o layout para que o "-" e o "X" fiquem na mesma linha
-minimizeButton.Position = UDim2.new(0, 0, 0.5, -10)
-closeButton.Position = UDim2.new(0, 30, 0.5, -10)
