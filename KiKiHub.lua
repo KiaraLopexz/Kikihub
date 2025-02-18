@@ -40,8 +40,10 @@ local circleButton = Instance.new("TextButton")
 circleButton.Parent = ui
 circleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 circleButton.Size = UDim2.new(0, 50, 0, 50)
-circleButton.Position = UDim2.new(0, 10, 0, 100)  -- Posição do botão
+circleButton.Position = UDim2.new(0, 10, 0, 10)  -- Posição do botão
 circleButton.Text = ""
+circleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+circleButton.AutoButtonColor = false
 circleButton.Shape = Enum.UIShape.Circle
 
 circleButton.MouseButton1Click:Connect(function()
