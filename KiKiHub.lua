@@ -66,10 +66,3 @@ closeButton.TextSize = 14
 closeButton.MouseButton1Click:Connect(function()
     ui:Destroy()
 end)
-
-minimizeButton.TextButton.Position = UDim2.new(0.5, 0, 0.5, 0)
-closeButton.TextButton.Position = UDim2.new(0.5, 0, 0.5, 0)
-
--- Alinhar botões no canto direito, com uma distância de 30 pixels
-minimizeButton.Position = UDim2.new(0, 0, 0.5, -10)
-closeButton.Position = UDim2.new(0, 30, 0.5, -10)
