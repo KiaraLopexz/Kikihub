@@ -35,7 +35,7 @@ UIS.InputChanged:Connect(function(i)
     end 
 end)
 
--- Criar o botão de minimização em forma de círculo
+-- Criar o botão de minimizar em forma de círculo
 local circleButton = Instance.new("TextButton")
 circleButton.Parent = ui
 circleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
@@ -79,4 +79,13 @@ closeButton.TextColor3 = Color3.fromRGB(255, 0, 0)
 closeButton.TextSize = 14
 closeButton.MouseButton1Click:Connect(function()
     ui:Destroy()  -- Fecha a aplicação
+end)
+
+-- Adiciona o botão de minimizar/abrir ao clicar no círculo
+circleButton.MouseButton1Click:Connect(function()
+    if frame.Visible then
+        frame.Visible = false
+    else
+        frame.Visible = true
+    end
 end)
