@@ -35,6 +35,20 @@ UIS.InputChanged:Connect(function(i)
     end 
 end)
 
+-- Criar o botão de minimização em forma de círculo
+local circleButton = Instance.new("TextButton")
+circleButton.Parent = ui
+circleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+circleButton.Size = UDim2.new(0, 50, 0, 50)
+circleButton.Position = UDim2.new(0, 10, 0, 100)  -- Posição do botão
+circleButton.Text = ""
+circleButton.Shape = Enum.UIShape.Circle
+
+circleButton.MouseButton1Click:Connect(function()
+    frame.Visible = not frame.Visible
+end)
+
+-- Botões de minimizar e fechar
 local buttonsFrame = Instance.new("Frame")
 buttonsFrame.Parent = frame
 buttonsFrame.BackgroundTransparency = 1
@@ -63,13 +77,4 @@ closeButton.TextColor3 = Color3.fromRGB(255, 0, 0)
 closeButton.TextSize = 14
 closeButton.MouseButton1Click:Connect(function()
     ui:Destroy()
-end)
-
-UIS.InputBegan:Connect(function(input, gameProcessedEvent)
-    if gameProcessedEvent then return end
-    if input.UserInputType == Enum.UserInputType.Keyboard then
-        if input.KeyCode == Enum.KeyCode.LeftControl then
-            frame.Visible = not frame.Visible
-        end
-    end
 end)
