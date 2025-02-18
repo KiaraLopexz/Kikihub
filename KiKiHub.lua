@@ -23,6 +23,41 @@ innerBorder.Position = UDim2.new(0, 2, 0, 2)
 innerBorder.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 innerBorder.BorderSizePixel = 0
 
+-- Botões
+local minimizeBtn = Instance.new("TextButton", frame)
+minimizeBtn.Size = UDim2.new(0, 30, 0, 30)
+minimizeBtn.Position = UDim2.new(1, -30, 0, 0)
+minimizeBtn.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+minimizeBtn.Text = "-"
+minimizeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+local maximizeBtn = Instance.new("TextButton", frame)
+maximizeBtn.Size = UDim2.new(0, 30, 0, 30)
+maximizeBtn.Position = UDim2.new(1, -60, 0, 0)
+maximizeBtn.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+maximizeBtn.Text = "+"
+maximizeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+local closeBtn = Instance.new("TextButton", frame)
+closeBtn.Size = UDim2.new(0, 30, 0, 30)
+closeBtn.Position = UDim2.new(1, -90, 0, 0)
+closeBtn.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+closeBtn.Text = "X"
+closeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+-- Ações dos botões
+closeBtn.MouseButton1Click:Connect(function()
+    ui:Destroy()
+end)
+
+minimizeBtn.MouseButton1Click:Connect(function()
+    frame.Visible = false
+end)
+
+maximizeBtn.MouseButton1Click:Connect(function()
+    frame.Size = UDim2.new(0.8, 0, 0.8, 0)
+end)
+
 frame.InputBegan:Connect(function(i) 
     if i.UserInputType == Enum.UserInputType.MouseButton1 then 
         dragging = true
