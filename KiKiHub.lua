@@ -35,35 +35,32 @@ UIS.InputChanged:Connect(function(i)
     end 
 end)
 
--- Criando os botões de controle
 local buttonsFrame = Instance.new("Frame")
 buttonsFrame.Parent = frame
 buttonsFrame.BackgroundTransparency = 1
 buttonsFrame.Size = UDim2.new(0, 60, 0, 20)
-buttonsFrame.Position = UDim2.new(1, -60, 0, 0)  -- Posiciona os botões no canto superior direito
+buttonsFrame.Position = UDim2.new(1, -60, 0, 0)
 
--- Botão Minimizar
 local minimizeButton = Instance.new("TextButton")
 minimizeButton.Parent = buttonsFrame
 minimizeButton.Size = UDim2.new(0, 20, 0, 20)
 minimizeButton.Position = UDim2.new(0, 0, 0, 0)
 minimizeButton.BackgroundTransparency = 1
 minimizeButton.Text = "_"
-minimizeButton.TextColor3 = Color3.fromRGB(255, 0, 0)  -- Botão vermelho
+minimizeButton.TextColor3 = Color3.fromRGB(255, 0, 0)
 minimizeButton.TextSize = 14
 minimizeButton.MouseButton1Click:Connect(function()
     frame.Visible = false
 end)
 
--- Botão Fechar
 local closeButton = Instance.new("TextButton")
 closeButton.Parent = buttonsFrame
 closeButton.Size = UDim2.new(0, 20, 0, 20)
-closeButton.Position = UDim2.new(0, 25, 0, 0)  -- Ajusta a posição do botão de fechar
+closeButton.Position = UDim2.new(0, 25, 0, 0)
 closeButton.BackgroundTransparency = 1
 closeButton.Text = "X"
-closeButton.TextColor3 = Color3.fromRGB(255, 0, 0)  -- Botão vermelho
+closeButton.TextColor3 = Color3.fromRGB(255, 0, 0)
 closeButton.TextSize = 14
 closeButton.MouseButton1Click:Connect(function()
-    ui:Destroy()  -- Fecha o Gui completamente
+    ui:Destroy()
 end)
