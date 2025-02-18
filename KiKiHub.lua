@@ -39,8 +39,8 @@ end)
 local buttonsFrame = Instance.new("Frame")
 buttonsFrame.Parent = frame
 buttonsFrame.BackgroundTransparency = 1
-buttonsFrame.Size = UDim2.new(1, 0, 0, 20)
-buttonsFrame.Position = UDim2.new(0, 0, 0, 0)
+buttonsFrame.Size = UDim2.new(0, 60, 0, 20)
+buttonsFrame.Position = UDim2.new(1, -60, 0, 0)  -- Posiciona os botões no canto superior direito
 
 -- Botão Minimizar
 local minimizeButton = Instance.new("TextButton")
@@ -55,24 +55,11 @@ minimizeButton.MouseButton1Click:Connect(function()
     frame.Visible = false
 end)
 
--- Botão Maximizar
-local maximizeButton = Instance.new("TextButton")
-maximizeButton.Parent = buttonsFrame
-maximizeButton.Size = UDim2.new(0, 20, 0, 20)
-maximizeButton.Position = UDim2.new(0, 25, 0, 0)
-maximizeButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-maximizeButton.Text = "□"
-maximizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-maximizeButton.TextSize = 14
-maximizeButton.MouseButton1Click:Connect(function()
-    frame.Size = UDim2.new(0.8, 0, 0.8, 0)  -- Maximiza o tamanho do Frame
-end)
-
 -- Botão Fechar
 local closeButton = Instance.new("TextButton")
 closeButton.Parent = buttonsFrame
 closeButton.Size = UDim2.new(0, 20, 0, 20)
-closeButton.Position = UDim2.new(0, 50, 0, 0)
+closeButton.Position = UDim2.new(0, 25, 0, 0)  -- Ajusta a posição do botão de fechar
 closeButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 closeButton.Text = "X"
 closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
