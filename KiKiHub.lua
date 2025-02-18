@@ -56,7 +56,7 @@ end)
 local closeButton = Instance.new("TextButton")
 closeButton.Parent = buttonsFrame
 closeButton.Size = UDim2.new(0, 20, 0, 20)
-closeButton.Position = UDim2.new(0, 25, 0, 0)
+closeButton.Position = UDim2.new(0, 20, 0, 0)  -- Ajustado para o botão "X" ficar na sequência do "-"
 closeButton.BackgroundTransparency = 1
 closeButton.Text = "X"
 closeButton.TextColor3 = Color3.fromRGB(255, 0, 0)
