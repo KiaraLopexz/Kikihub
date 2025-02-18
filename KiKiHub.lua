@@ -65,5 +65,6 @@ closeButton.MouseButton1Click:Connect(function()
     ui:Destroy()
 end)
 
--- Ajustar a posição do botão "-" para ficar no centro do "X"
-minimizeButton.Position = UDim2.new(0, 5, 0, 0)  -- Agora alinhado com o "X"
+-- Ajustar a posição para alinhar o texto "-" e "X"
+minimizeButton.Position = UDim2.new(0, 0, 0, 0)
+closeButton.Position = UDim2.new(0, 25, 0, 0)
