@@ -39,7 +39,7 @@ local buttonsFrame = Instance.new("Frame")
 buttonsFrame.Parent = frame
 buttonsFrame.BackgroundTransparency = 1
 buttonsFrame.Size = UDim2.new(0, 50, 0, 20)
-buttonsFrame.Position = UDim2.new(1, -55, 0, 0)
+buttonsFrame.Position = UDim2.new(1, -45, 0, 0)
 
 local minimizeButton = Instance.new("TextButton")
 minimizeButton.Parent = buttonsFrame
