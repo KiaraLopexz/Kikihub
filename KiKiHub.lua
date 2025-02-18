@@ -1,7 +1,15 @@
-```lua
-local ui, frame, UIS, dragging, lastPos = Instance.new("ScreenGui"), Instance.new("Frame"), game:GetService("UserInputService"), false, nil
-ui.Parent, frame.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui"), ui
-frame.BackgroundColor3, frame.BorderSizePixel, frame.Position, frame.Size, frame.BackgroundTransparency = Color3.fromRGB(0, 0, 0), 0, UDim2.new(0.3, 0, 0.2, 0), UDim2.new(0.4, 0, 0.4, 0), 0.2
+local ui = Instance.new("ScreenGui")
+local frame = Instance.new("Frame")
+local UIS = game:GetService("UserInputService")
+local dragging, lastPos = false, nil
+
+ui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+frame.Parent = ui
+frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+frame.BorderSizePixel = 0
+frame.Position = UDim2.new(0.3, 0, 0.2, 0)
+frame.Size = UDim2.new(0.4, 0, 0.4, 0)
+frame.BackgroundTransparency = 0.2
 
 local border = Instance.new("Frame", frame)
 border.Size = UDim2.new(1, 0, 1, 0)
@@ -79,4 +87,3 @@ UIS.InputChanged:Connect(function(i)
         lastPos = UIS:GetMouseLocation()
     end 
 end)
-```
