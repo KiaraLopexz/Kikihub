@@ -1,15 +1,6 @@
-local ui = Instance.new("ScreenGui")
-local frame = Instance.new("Frame")
-local UIS = game:GetService("UserInputService")
-local dragging, lastPos = false, nil
-
-ui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-frame.Parent = ui
-frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-frame.BorderSizePixel = 0
-frame.Position = UDim2.new(0.3, 0, 0.2, 0)
-frame.Size = UDim2.new(0.4, 0, 0.4, 0)
-frame.BackgroundTransparency = 0.2
+local ui, frame, UIS, dragging, lastPos = Instance.new("ScreenGui"), Instance.new("Frame"), game:GetService("UserInputService"), false, nil
+ui.Parent, frame.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui"), ui
+frame.BackgroundColor3, frame.BorderSizePixel, frame.Position, frame.Size, frame.BackgroundTransparency = Color3.fromRGB(0, 0, 0), 0, UDim2.new(0.3, 0, 0.2, 0), UDim2.new(0.4, 0, 0.4, 0), 0.2
 
 local border = Instance.new("Frame", frame)
 border.Size = UDim2.new(1, 0, 1, 0)
@@ -22,41 +13,6 @@ innerBorder.Size = UDim2.new(1, -4, 1, -4)
 innerBorder.Position = UDim2.new(0, 2, 0, 2)
 innerBorder.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 innerBorder.BorderSizePixel = 0
-
--- Botões
-local minimizeBtn = Instance.new("TextButton", frame)
-minimizeBtn.Size = UDim2.new(0, 30, 0, 30)
-minimizeBtn.Position = UDim2.new(1, -30, 0, 0)
-minimizeBtn.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-minimizeBtn.Text = "-"
-minimizeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-
-local maximizeBtn = Instance.new("TextButton", frame)
-maximizeBtn.Size = UDim2.new(0, 30, 0, 30)
-maximizeBtn.Position = UDim2.new(1, -60, 0, 0)
-maximizeBtn.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-maximizeBtn.Text = "+"
-maximizeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-
-local closeBtn = Instance.new("TextButton", frame)
-closeBtn.Size = UDim2.new(0, 30, 0, 30)
-closeBtn.Position = UDim2.new(1, -90, 0, 0)
-closeBtn.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-closeBtn.Text = "X"
-closeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-
--- Ações dos botões
-closeBtn.MouseButton1Click:Connect(function()
-    ui:Destroy()
-end)
-
-minimizeBtn.MouseButton1Click:Connect(function()
-    frame.Visible = false
-end)
-
-maximizeBtn.MouseButton1Click:Connect(function()
-    frame.Size = UDim2.new(0.8, 0, 0.8, 0)
-end)
 
 frame.InputBegan:Connect(function(i) 
     if i.UserInputType == Enum.UserInputType.MouseButton1 then 
@@ -77,4 +33,50 @@ UIS.InputChanged:Connect(function(i)
         frame.Position = UDim2.new(0, frame.Position.X.Offset + delta.X, 0, frame.Position.Y.Offset + delta.Y)
         lastPos = UIS:GetMouseLocation()
     end 
+end)
+
+-- Criando os botões de controle
+local buttonsFrame = Instance.new("Frame")
+buttonsFrame.Parent = frame
+buttonsFrame.BackgroundTransparency = 1
+buttonsFrame.Size = UDim2.new(1, 0, 0, 20)
+buttonsFrame.Position = UDim2.new(0, 0, 0, 0)
+
+-- Botão Minimizar
+local minimizeButton = Instance.new("TextButton")
+minimizeButton.Parent = buttonsFrame
+minimizeButton.Size = UDim2.new(0, 20, 0, 20)
+minimizeButton.Position = UDim2.new(0, 0, 0, 0)
+minimizeButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+minimizeButton.Text = "_"
+minimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+minimizeButton.TextSize = 14
+minimizeButton.MouseButton1Click:Connect(function()
+    frame.Visible = false
+end)
+
+-- Botão Maximizar
+local maximizeButton = Instance.new("TextButton")
+maximizeButton.Parent = buttonsFrame
+maximizeButton.Size = UDim2.new(0, 20, 0, 20)
+maximizeButton.Position = UDim2.new(0, 25, 0, 0)
+maximizeButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+maximizeButton.Text = "□"
+maximizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+maximizeButton.TextSize = 14
+maximizeButton.MouseButton1Click:Connect(function()
+    frame.Size = UDim2.new(0.8, 0, 0.8, 0)  -- Maximiza o tamanho do Frame
+end)
+
+-- Botão Fechar
+local closeButton = Instance.new("TextButton")
+closeButton.Parent = buttonsFrame
+closeButton.Size = UDim2.new(0, 20, 0, 20)
+closeButton.Position = UDim2.new(0, 50, 0, 0)
+closeButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+closeButton.Text = "X"
+closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeButton.TextSize = 14
+closeButton.MouseButton1Click:Connect(function()
+    ui:Destroy()  -- Fecha o Gui completamente
 end)
