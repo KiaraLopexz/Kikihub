@@ -56,7 +56,7 @@ end)
 local closeButton = Instance.new("TextButton")
 closeButton.Parent = buttonsFrame
 closeButton.Size = UDim2.new(0, 20, 0, 20)
-closeButton.Position = UDim2.new(0, 25, 0, 0)  -- Ajustado para alinhar com o -
+closeButton.Position = UDim2.new(0, 25, 0, 0)
 closeButton.BackgroundTransparency = 1
 closeButton.Text = "X"
 closeButton.TextColor3 = Color3.fromRGB(255, 0, 0)
@@ -64,3 +64,6 @@ closeButton.TextSize = 14
 closeButton.MouseButton1Click:Connect(function()
     ui:Destroy()
 end)
+
+-- Ajustar a posição do botão "-" para ficar no centro do "X"
+minimizeButton.Position = UDim2.new(0, 5, 0, 0)  -- Agora alinhado com o "X"
