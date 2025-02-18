@@ -56,7 +56,7 @@ end)
 local closeButton = Instance.new("TextButton")
 closeButton.Parent = buttonsFrame
 closeButton.Size = UDim2.new(0, 20, 0, 20)
-closeButton.Position = UDim2.new(1, -20, 0, 0)
+closeButton.Position = UDim2.new(0, -20, 0, 0)
 closeButton.BackgroundTransparency = 1
 closeButton.Text = "X"
 closeButton.TextColor3 = Color3.fromRGB(255, 0, 0)
@@ -66,4 +66,4 @@ closeButton.MouseButton1Click:Connect(function()
 end)
 
 minimizeButton.Position = UDim2.new(0, 0, 0, 0)
-closeButton.Position = UDim2.new(0, 0, 0, 0)
+closeButton.Position = UDim2.new(0, 25, 0, 0)
