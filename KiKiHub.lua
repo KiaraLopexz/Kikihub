@@ -56,11 +56,28 @@ end)
 local closeButton = Instance.new("TextButton")
 closeButton.Parent = buttonsFrame
 closeButton.Size = UDim2.new(0, 20, 0, 20)
-closeButton.Position = UDim2.new(0, 20, 0, 0)  -- Ajustado para o botão "X" ficar na sequência do "-"
+closeButton.Position = UDim2.new(0, 20, 0, 0)  
 closeButton.BackgroundTransparency = 1
 closeButton.Text = "X"
 closeButton.TextColor3 = Color3.fromRGB(255, 0, 0)
 closeButton.TextSize = 14
 closeButton.MouseButton1Click:Connect(function()
     ui:Destroy()
+end)
+
+-- Função para minimizar com Ctrl + M
+UIS.InputBegan:Connect(function(input, gameProcessedEvent)
+    if gameProcessedEvent then return end
+    
+    if input.UserInputType == Enum.UserInputType.Keyboard then
+        -- Minimizar com Ctrl + M
+        if input.KeyCode == Enum.KeyCode.M and UIS:IsKeyDown(Enum.KeyCode.LeftControl) then
+            frame.Visible = false
+        end
+
+        -- Restaurar com Ctrl + Shift + M
+        if input.KeyCode == Enum.KeyCode.M and UIS:IsKeyDown(Enum.KeyCode.LeftControl) and UIS:IsKeyDown(Enum.KeyCode.LeftShift) then
+            frame.Visible = true
+        end
+    end
 end)
