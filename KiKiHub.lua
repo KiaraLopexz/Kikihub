@@ -47,7 +47,7 @@ circleButton.AutoButtonColor = false
 circleButton.Shape = Enum.UIShape.Circle
 
 circleButton.MouseButton1Click:Connect(function()
-    frame.Visible = not frame.Visible
+    frame.Visible = not frame.Visible  -- Alterna visibilidade
 end)
 
 -- Botões de minimizar e fechar
@@ -66,7 +66,7 @@ minimizeButton.Text = "-"
 minimizeButton.TextColor3 = Color3.fromRGB(255, 0, 0)
 minimizeButton.TextSize = 14
 minimizeButton.MouseButton1Click:Connect(function()
-    frame.Visible = false
+    frame.Visible = false  -- Minimiza
 end)
 
 local closeButton = Instance.new("TextButton")
@@ -78,5 +78,5 @@ closeButton.Text = "X"
 closeButton.TextColor3 = Color3.fromRGB(255, 0, 0)
 closeButton.TextSize = 14
 closeButton.MouseButton1Click:Connect(function()
-    ui:Destroy()
+    ui:Destroy()  -- Fecha a aplicação
 end)
