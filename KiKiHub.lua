@@ -66,3 +66,7 @@ closeButton.TextSize = 14
 closeButton.MouseButton1Click:Connect(function()
     ui:Destroy()
 end)
+
+-- Ajustar o alinhamento
+minimizeButton.Position = UDim2.new(0, 0, 0.5, -10)
+closeButton.Position = UDim2.new(0, 30, 0.5, -10)
